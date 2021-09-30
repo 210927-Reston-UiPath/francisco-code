@@ -6,7 +6,6 @@ Class Contact
         Me.PhoneNumber = number
     End Sub
     
-
     Overrides Function ToString()  As string
         return $"Name: {Me.Name} Number: {Me.PhoneNumber}"        
     End Function

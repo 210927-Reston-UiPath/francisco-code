@@ -1,17 +1,21 @@
 Class MainMenu
     Implements IMenu
+    dim friends as list(of Contact) = new List(of Contact)
     Sub Initial() Implements IMenu.Start
         Console.WriteLine("Hello World!")
         dim repeat as Boolean = true
         Do While repeat
             Console.WriteLine("What would you like to do?")
             Console.WriteLine("[0] Add a friend")
+            Console.WriteLine("[1] Show friends")
             Console.WriteLine("[x] Exit")
             Dim input as string = Console.ReadLine()
             Select Case input
                 Case "0"
                     Console.WriteLine("Hello")
                     AddFriend()
+                Case "1"
+                    ShowFriends()
                 Case "x"
                     Console.WriteLine("Goodbye")
                     repeat = false
@@ -24,7 +28,13 @@ Class MainMenu
         Console.WriteLine("Phone Number: ")
         dim number as string = Console.ReadLine()
         dim newfriend as Contact = new Contact(name, Int32.Parse(number))
+        friends.Add(newfriend)
         Console.WriteLine("New Friend Created! " + newfriend.ToString())
     End Sub
-    
+    sub ShowFriends()
+        Console.WriteLine("Friend list plus contact info")
+        for each person as contact in friends
+            Console.WriteLine(person.ToString())
+        next
+    end sub
 End Class

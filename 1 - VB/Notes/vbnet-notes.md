@@ -27,4 +27,9 @@
 # Programming with VB
     - no semi colons
     - VB doesn't follow standard indentation practices 
-    
+    - case insensitive
+# Methods in VB
+    - 2 types of methods 
+        - Subs: return void
+        - Functions: return something
+    - both execute some logic when they are called

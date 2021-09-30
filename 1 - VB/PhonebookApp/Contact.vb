@@ -1,13 +1,17 @@
 Class Contact
-    Property Name As string
-    Property PhoneNumber As integer
-    Public Sub New(ByVal name as string, ByVal number as integer)
+   Property Name As string
+   Property PhoneNumber As Integer 
+   Public Sub New(ByVal name as string, ByVal number as Integer)
         Me.Name = name
         Me.PhoneNumber = number
+    End sub
+    Public Sub New()
+        'x parameterless constructor
     End Sub
-    
-    Overrides Function ToString()  As string
-        return $"Name: {Me.Name} Number: {Me.PhoneNumber}"        
+
+
+    Overrides Function ToString() As string
+        return $"Name: {Me.Name} Number: {Me.PhoneNumber}"
     End Function
-    
+
 End Class
